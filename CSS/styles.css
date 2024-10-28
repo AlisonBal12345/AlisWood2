@@ -1,0 +1,368 @@
+:root {
+  --background-color: whitesmoke;
+  --text-color: #000;
+  --header-background-color: #2B1B0E;
+  --footer-background-color: #2B1B0E;
+  --card-background-color: rgb(255, 255, 255);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+header {
+  background-color: var(--header-background-color);
+}
+
+footer {
+  background-color: var(--footer-background-color);
+}
+
+.product-card {
+  background-color: var(--card-background-color);
+}
+
+html, body {
+  height: 100%;
+  margin:0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  /*background-color: #fefeff;*/
+  display:flex;
+  flex-direction: column;
+  
+}
+
+header {
+  /*background-color: #120436;*/
+  color: whitesmoke;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logoI{
+  width: 200px;
+  height: 80px;
+  border-radius: 5%;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+nav a, #welcome-message {
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+}
+#welcome-message {
+  font-weight: bold;
+  color: whitesmoke;
+  display: inline-block;
+}
+
+/* Estilo para el botón de hamburguesa */
+.hamburger {
+  display: none;
+  background-color: #604427;
+  color: white;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+h1 {
+  margin: 20px 0;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+  max-width: 300px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: rgb(96, 73, 58);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #b1d7b9;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 10px;
+  padding: 20px;
+}
+
+.product-card {
+ /* background-color: white;*/
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 50%;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.product-card .sold-out {
+  color: red;
+  font-weight: bold;
+}
+
+#logout-link {
+  color: rgb(142, 108, 86);
+  cursor: pointer;
+}
+
+#welcome-message {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #C89B5D;
+}
+.compra {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.compra h3 {
+  margin: 0 0 10px;
+}
+
+.compra ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.compra ul li {
+  padding: 10px 0;
+}
+
+.compra p {
+  font-weight: bold;
+}
+
+footer{
+ /* background-color: #120436;*/
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.footerdiv{
+  padding: 20px;
+  display: flex;
+  justify-content:space-around;
+  flex-wrap: wrap;
+}
+.footerdiv1{
+  padding-top: 20px; 
+  }
+
+.footerdiv2{
+  color: white;
+  text-align: left; 
+}
+
+footer a{
+  text-decoration: none;
+  color: rgb(234, 229, 229);
+}
+
+/* Para pantallas de hasta 768px (tablets y móviles en modo horizontal) */
+@media screen and (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tabletas */
+  }
+
+  header, footer {
+    text-align: center; /* Centra el contenido del header y footer */
+  }
+
+  nav {
+    display: none; /* Oculta el menú de navegación por defecto */
+    flex-direction: column; /* Cambia la dirección de los elementos del menú */
+    background-color: #2B1B0E;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  nav a {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Muestra el botón de hamburguesa */
+  .hamburger {
+    display: block;
+  }
+
+  /* Muestra el menú cuando está activo */
+  nav.active {
+    display: flex;
+  }
+  
+  .hamburger.active {
+    content: "\2715"; /* Cambia a una "X" cuando el menú esté activo */
+  }
+
+  .footerdiv {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerdiv1, .footerdiv2 {
+    text-align: center;
+  }
+
+  .footerdiv2 ul {
+    padding-left: 0;
+  }
+
+  .footerdiv2 ul li {
+    list-style-type: none;
+  }
+
+}
+
+/* Para pantallas de hasta 480px (móviles en modo vertical) */
+@media screen and (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+  }
+
+  button, input {
+    width: 100%; /* Asegura que botones e inputs ocupen todo el ancho disponible */
+  }
+
+  .hamburger.active {
+    content: "\2715"; /* Cambia a una "X" cuando el menú esté activo */
+  }
+
+  nav {
+    flex-direction: column; /* Cambiar a columna en móviles */
+  }
+
+  .hamburger {
+    display: block; /* Mostrar botón hamburguesa en móviles */
+  }
+
+}
+
+/* Carrusel */
+/* Contenedor del carrusel */
+.carousel-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1; 
+}
+
+/* Carrusel */
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 500%;
+
+}
+
+/* Cada elemento del carrusel */
+.carousel-item {
+  min-width: 20%; /* 100% dividido entre 5 imágenes */
+  transition: transform 0.5s ease;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 700px;
+  border-radius: 10px;
+}
+
+/* Controles de navegación */
+.carousel-prev, .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 100%;
+  }
+
+  .carousel-prev, .carousel-next {
+    padding: 5px;
+  }
+
+  nav {
+    z-index: 1000; /* Asegúrate de que esto esté configurado para móviles */
+}
+.carrusel {
+    z-index: 1; /* O un valor más bajo */
+}
+}
